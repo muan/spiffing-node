@@ -1,0 +1,30 @@
+{
+  "name": "spiffing-node",
+  "version": "0.0.1",
+  "description": "CSS preprocessor for British English writers, as implemented by @idiot in SpiffingCSS.",
+  "main": "lib/spiffing.js",
+  "scripts": {
+    "test": "node something.js"
+  },
+  "bin": {
+    "spiffing": "bin/spiffing.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/muan/spiffing-node.git"
+  },
+  "keywords": [
+    "spiffing",
+    "british english",
+    "spelling",
+    "css"
+  ],
+  "author": "muan",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "glob": "~3.2.6"
+  },
+  "bugs": {
+    "url": "https://github.com/muan/spiffing-node/issues"
+  }
+}
