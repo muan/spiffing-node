@@ -13,10 +13,10 @@ function correct_spelling(data) {
     ["capitalise", "capitalize"]
   ]
 
-  for ( i = 0; i < translations.length; i++) {
-    regex = new RegExp(translations[i][0], "g")
-    data = data.replace(regex, translations[i][1])
-  }
+  translations.map(function(pair) {
+    regex = new RegExp(pair[0], "g")
+    data = data.replace(regex, pair[1])
+  })
 
   return data
 }
