@@ -1,6 +1,6 @@
 module.exports = correct_spelling;
 
-function correct_spelling (data) {
+function correct_spelling(data) {
 
   translations = [
     ["colour", "color"],

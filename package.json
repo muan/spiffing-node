@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "CSS preprocessor for British English writers, as implemented by @idiot in SpiffingCSS.",
   "scripts": {
-    "test": "node something.js"
+    "test": "node test/test.js"
   },
   "bin": {
     "spiffing": "bin/spiffing.js"
@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/muan/spiffing-node/issues"
+  },
+  "devDependencies": {
+    "tape": "~2.1.0"
   }
 }
