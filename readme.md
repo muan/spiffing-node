@@ -20,32 +20,36 @@ Convert the css file specified
 
 ### What this does
 
-    /* Your well-spelt CSS */
-    
-    body {
-      background-colour: grey !please;
-      transparency: 0.5;
-      text-align: centre;
-      font-weight: plump;
-      text-transform: capitalise;
-    }
-    
-    .frame {
-      background-photograph: url('/queen.png') !please;
-    }
+```css
+/* Your well-spelt CSS */
+
+body {
+  background-colour: grey !please;
+  transparency: 0.5;
+  text-align: centre;
+  font-weight: plump;
+  text-transform: capitalise;
+}
+
+.frame {
+  background-photograph: url('/queen.png') !please;
+}
+```
 
 becomes
 
-    /* Output CSS */
-    
-    body {
-      background-color: gray !important;
-      opacity: 0.5;
-      text-align: center;
-      font-weight: bold;
-      text-transform: capitalize;
-    }
-    
-    .frame {
-      background-image: url('/queen.png') !important;
-    }
+```css
+/* Output CSS */
+
+body {
+  background-color: gray !important;
+  opacity: 0.5;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.frame {
+  background-image: url('/queen.png') !important;
+}
+```
