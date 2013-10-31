@@ -36,7 +36,7 @@ function convertFile(file) {
     
     fs.writeFile( filepath + "/" + new_filename , spiffing(data), function (errWrite) {
       if (errWrite) throw errWrite
-      console.log("Converted " + file + " to " + new_filename + "!")
+      console.log("Converted " + filename + " to " + new_filename + "!")
     })
 
   })
