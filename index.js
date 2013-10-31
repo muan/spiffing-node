@@ -1,4 +1,4 @@
-module.exports = correct_spelling;
+module.exports = correct_spelling
 
 function correct_spelling(data) {
 
@@ -18,5 +18,5 @@ function correct_spelling(data) {
     data = data.replace(regex, translations[i][1])
   }
 
-  return data;
+  return data
 }

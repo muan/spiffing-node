@@ -17,27 +17,27 @@ function convertCssFilesInCurrentDir (dir) {
   var glob = require('glob')
   var files = []
 
-  glob(dir + "/*.css", findAndProcessFiles );
+  glob(dir + "/*.css", findAndProcessFiles )
 }
 
 function findAndProcessFiles (err, results) {
   results.filter(function(result){
-    return !result.match("-converted.css");
-  }).map(convertFile);
+    return !result.match("-converted.css")
+  }).map(convertFile)
 }
 
 function convertFile (file) {
-  fs.readFile( file, "utf8" , function (err, data) {
-    if (err) throw err;
+  fs.readFile( file, "utf8" , function (errRead, data) {
+    if (errRead) throw errRead
 
     filename = path.basename(file, '.css')
     new_filename = filename + "-converted.css"
     filepath = path.dirname(file)
     
-    fs.writeFile( filepath + "/" + new_filename , spiffing(data), function (err) {
-      if (err) throw err;
-      console.log("Converted " + file + " to " + new_filename + "!");
-    });
+    fs.writeFile( filepath + "/" + new_filename , spiffing(data), function (errWrite) {
+      if (errWrite) throw errWrite
+      console.log("Converted " + file + " to " + new_filename + "!")
+    })
 
-  });
+  })
 }
