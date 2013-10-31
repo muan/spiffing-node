@@ -1,29 +1,43 @@
 #!/usr/bin/env node
 
 var fs = require('fs')
-var spiffing = require('../lib/spiffing.js')
+var path = require("path")
+var spiffing = require('../')
 
-input = process.argv[2]
-isDir(input) ? convertCssFilesInCurrentDir( (input || ".") ) : convertFile(input);
+var input = process.argv[2] || "."
 
-function isDir(input) {
+if (isDir(input)) convertCssFilesInCurrentDir(input)
+else convertFile(input)
+
+function isDir (input) {
   return input ? fs.lstatSync(input).isDirectory() : true
 }
 
-function convertCssFilesInCurrentDir(dir) {
+function convertCssFilesInCurrentDir (dir) {
   var glob = require('glob')
   var files = []
 
-  glob(dir + "/*.css", function (err, results) {
-    for( i = 0; i < results.length; i++) {
-      if(!results[i].match("-converted.css")) {
-        convertFile(results[i]);
-      }
-    }
-  });
+  glob(dir + "/*.css", findAndProcessFiles );
 }
 
-function convertFile(file) {
-  spiffing(file);
-  console.log("Converted " + file + "!");
+function findAndProcessFiles (err, results) {
+  results.filter(function(result){
+    return !result.match("-converted.css");
+  }).map(convertFile);
+}
+
+function convertFile (file) {
+  fs.readFile( file, "utf8" , function (err, data) {
+    if (err) throw err;
+
+    filename = path.basename(file, '.css')
+    new_filename = filename + "-converted.css"
+    filepath = path.dirname(file)
+    
+    fs.writeFile( filepath + "/" + new_filename , spiffing(data), function (err) {
+      if (err) throw err;
+      console.log("Converted " + file + " to " + new_filename + "!");
+    });
+
+  });
 }

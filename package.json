@@ -2,7 +2,6 @@
   "name": "spiffing-node",
   "version": "0.0.1",
   "description": "CSS preprocessor for British English writers, as implemented by @idiot in SpiffingCSS.",
-  "main": "lib/spiffing.js",
   "scripts": {
     "test": "node something.js"
   },
